@@ -1,0 +1,33 @@
+---
+
+---
+
+<div class="gallery">
+    <slot />
+</div>
+
+<style>
+    .paragraph {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .side {
+        width: 200px;
+        margin: auto;
+    }
+
+    .central-row {
+        width: 800px;
+        max-width: calc(100% - 2rem);
+        color: white;
+        font-size: 20px;
+        line-height: 1.6;
+    }
+
+    @media screen and (min-width: 992px) {
+        .paragraph {
+            flex-direction: row;
+        }
+    }
+</style>

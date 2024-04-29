@@ -1,0 +1,1014 @@
+---
+import '../assets/style.css';
+
+import PostIt from "../components/PostIt.astro";
+import Paragraph from "../components/Paragraph.astro";
+import Pin from "../components/Pin.astro";
+
+import Layout from "../layouts/Layout.astro";
+
+import { Image } from "astro:assets";
+
+import ao from "../assets/Day1/a&o.jpg";
+import bwtartan from "../assets/Day1/blackWatchTartranColor.webp";
+import edinView from "../assets/Day1/EdinburghView.jpg";
+
+import StAnthonyCamera from "../assets/Day2/StAnthonyCamera.jpg";
+import arthurSeatSmog from "../assets/Day2/arthurSeatSmog.jpg";
+import arthurSeatTop from "../assets/Day2/arthurSeatTop.jpg";
+import edinburghCastleCanon from "../assets/Day2/edinburghCastleCanon.jpg";
+import edinburghCastleChapel from "../assets/Day2/edinburghCastleChapel.jpg";
+import edinburghCastleGreatHall from "../assets/Day2/edinburghCastleGreatHall.jpg";
+import edinburghCastleMemorial from "../assets/Day2/edinburghCastleMemorial.jpg";
+import edinburghCastleMonsMeg from "../assets/Day2/edinburghCastleMonsMeg.jpg";
+import whiskyScottExperience from "../assets/Day2/whiskyScottExperience.jpg";
+import whiskyScottExperienceTestBottles from "../assets/Day2/whiskyScottExperienceTestBottles.jpg";
+
+import faskallyForestDog from "../assets/Day3/faskallyForestDog.jpg";
+import glenviewChaletParkHotTub from "../assets/Day3/glenviewChaletParkHotTub.jpg";
+import glenviewChaletParkView from "../assets/Day3/glenviewChaletParkView.jpg";
+
+import ploddaFalls1 from "../assets/Day4/ploddaFalls1.jpg";
+import ploddaFalls2 from "../assets/Day4/ploddaFalls2.jpg";
+import ploddaFalls3 from "../assets/Day4/ploddaFalls3.jpg";
+import ploddaFalls4 from "../assets/Day4/ploddaFalls4.jpg";
+import ploddaFalls5 from "../assets/Day4/ploddaFalls5.jpg";
+import ploddaFalls7 from "../assets/Day4/ploddaFalls7.jpg";
+import ploddaFalls8 from "../assets/Day4/ploddaFalls8.jpg";
+import ploddaFalls9 from "../assets/Day4/ploddaFalls9.jpg";
+
+import InvernessLeakeysBookshop from "../assets/Day5/InvernessLeakeysBookshop.jpg";
+import InvernessMerkinchReserve from "../assets/Day5/InvernessMerkinchReserve.jpg";
+import UquhartCastle1 from "../assets/Day5/UquhartCastle1.jpg";
+import UquhartCastle2 from "../assets/Day5/UquhartCastle2.jpg";
+import UquhartCastle3 from "../assets/Day5/UquhartCastle3.jpg";
+import UquhartCastleLochNess from "../assets/Day5/UquhartCastleLochNess.jpg";
+import UquhartCastleNath from "../assets/Day5/UquhartCastleNath.jpg";
+
+import eileanDonanCastle from "../assets/Day6/eileanDonanCastle.jpg";
+import fairyPools1 from "../assets/Day6/fairyPools1.jpg";
+import fairyPools2 from "../assets/Day6/fairyPools2.jpg";
+import fairyPools3 from "../assets/Day6/fairyPools3.jpg";
+import fairyPools4 from "../assets/Day6/fairyPools4.jpg";
+import fairyPools5 from "../assets/Day6/fairyPools5.jpg";
+
+import fallsOfOrrin1 from "../assets/Day7/fallsOfOrrin1.jpg";
+import fallsOfOrrin2 from "../assets/Day7/fallsOfOrrin2.jpg";
+import fallsOfOrrin3 from "../assets/Day7/fallsOfOrrin3.jpg";
+import fallsOfOrrin4 from "../assets/Day7/fallsOfOrrin4.jpg";
+import fallsOfOrrin5 from "../assets/Day7/fallsOfOrrin5.jpg";
+import fallsOfOrrin6 from "../assets/Day7/fallsOfOrrin6.jpg";
+import fallsOfOrrin7 from "../assets/Day7/fallsOfOrrin7.jpg";
+import fallsOfOrrinFrog from "../assets/Day7/fallsOfOrrinFrog.jpg";
+
+import map from "../assets/Map/map.png";
+---
+
+<script>
+	// Function to show the section based on the hash
+	function showSectionFromHash() {
+		const hash = window.location.hash;
+		if (hash.length <= 5) {
+			return;
+		}
+		const elements = document.querySelectorAll("." + hash.slice(5));
+
+		if (elements.length > 0) {
+			elements[0].classList.add("highlight");
+			setTimeout(() => {
+				elements[0].classList.remove("highlight");
+			}, 3000);
+		}
+	}
+
+	showSectionFromHash();
+
+	window.addEventListener("hashchange", showSectionFromHash);
+</script>
+
+<Layout title="Scotland trip">
+	<main>
+		<h1><span class="header-gradient">Ecosse 2024</span></h1>
+		<a href="en" class="translate">EN</a>
+
+		<div class="intro">
+			<div>
+				<PostIt displayAuthor author="nath">
+					Hello, voici un journal digitial de notre voyage en Ecosse.
+					On s'est bien amusés à le faire et on espère que vous allez
+					l'appréciez.
+				</PostIt>
+			</div>
+			<div>
+				<PostIt displayAuthor author="anneso">
+					Je n'ai pu patienter qu'un an avant de retourner à
+					Edimburgh, mais cette fois j'étais accompagnée.
+				</PostIt>
+			</div>
+		</div>
+
+		<Paragraph>
+			<div id="map" class="map">
+				<a id="map_edinburgh" href="#edinburgh"
+					><Pin className="edinburgh" /></a
+				>
+				<a id="map_inverness" href="#inverness"
+					><Pin className="inverness" /></a
+				>
+				<a id="map_plodda" href="#plodda"><Pin className="plodda" /></a>
+				<a id="map_faskally" href="#faskally"
+					><Pin className="faskally" /></a
+				>
+				<a id="map_glenview" href="#glenview"
+					><Pin className="glenview" /></a
+				>
+				<a id="map_urquhart" href="#urquhart"
+					><Pin className="urquhart" /></a
+				>
+				<a id="map_fairypools" href="#fairypools"
+					><Pin className="fairypools" /></a
+				>
+				<a id="map_eilean" href="#eilean"><Pin className="eilean" /></a>
+				<a id="map_orrin" href="#orrin"><Pin className="orrin" /></a>
+
+				<Image src={map} alt="map" />
+			</div>
+		</Paragraph>
+
+		<h2><span class="text-gradient">Jour 1 - 16/03/2024</span></h2>
+		<Paragraph>
+			<div class="tartan-container">
+				<p id="edinburgh">
+					Arrivés à Edimbourg <a href="#map_edinburgh"
+						><svg class="text-pin" viewBox="0 0 512 512">
+							<g>
+								<path
+									fill="white"
+									d="M256,390.634c13.353,0,25.482-6.804,32.448-18.201c48.81-79.857,106.992-185.103,106.992-232.994   C395.44,62.552,332.888,0,256,0S116.56,62.552,116.56,139.439c0,47.891,58.183,153.137,106.992,232.994   C230.518,383.83,242.648,390.634,256,390.634z M199.953,129.865c0-30.903,25.143-56.045,56.047-56.045s56.047,25.142,56.047,56.045   c0,30.904-25.143,56.046-56.047,56.046S199.953,160.77,199.953,129.865z"
+								></path>
+							</g>
+						</svg></a
+					> en début d'après-midi, Anne-Sophie cède immédiatement à la
+					tentation et s'achète une belle écharpe aux couleurs du régiment
+					des Highland: la <a
+						href="https://fr.wikipedia.org/wiki/Black_Watch"
+						>Black Watch</a
+					>.
+				</p>
+				<Image
+					class="tartan"
+					src={bwtartan}
+					alt="Les couleurs de la Black Watch."
+				/>
+			</div>
+			<PostIt slot="postit-left" author="anneso">
+				J'avais oublié la mienne, mais c'était une bonne chose au final.
+			</PostIt>
+		</Paragraph>
+		<Paragraph>
+			<p>
+				Premier stop pour un Poke Bowl chez Bowls après avoir été recalé
+				chez MuM's qui était complet. Ensuite, petite visite des
+				différents shops de Victoria Street et notamment le Harry Potter
+				Museum.
+			</p>
+			<PostIt slot="postit-right" author="anneso">
+				Après avoir fait les Studios Warner Bros de Londres il y a deux
+				ans, Nath n'était que peu impressioné.
+			</PostIt>
+		</Paragraph>
+		<Paragraph>
+			<div class="gallery">
+				<div class="img portrait">
+					<div>
+						<Image
+							src={edinView}
+							alt="Vue depuis une petite rue d'Edimbourg"
+						/>
+					</div>
+				</div>
+			</div>
+			<PostIt slot="postit-left" author="nath">
+				Ambiance chemin de traverse d'Harry Potter
+			</PostIt>
+		</Paragraph>
+		<Paragraph left="top" right="bottom">
+			<p>
+				En pensant visiter les catacombes, nous nous sommes retrouvés à
+				faire le <a href="https://www.thedungeons.com/edinburgh/"
+					>Donjon d'Edimbourg</a
+				> qui s'est avéré être un tour comprenant 8 live shows orientés horreur
+				avec des acteurs, un peu de tension, et des effets pratiques relatant
+				certains évènements du passé de la ville. Pas tout à fait ce qui
+				était prévu, mais une très bonne expérience ! <br> Pause goûter chez <a
+					href="https://www.morbakehouse.co.uk/">Mòr Bakehouse</a
+				> pour des beignets au chocolat et des pâtisseries salées végétariennes.
+				Ensuite check-in dans l'auberge de jeunesse et meet up avec le reste
+				du groupe dans la pizzeria Civerinos Hunter Square.
+			</p>
+			<PostIt slot="postit-left" author="anneso">
+				J'aurais préféré faire la session -18 le soir mais nous n'avions
+				pas le temps
+			</PostIt>
+			<PostIt slot="postit-right" author="nath">
+				On est retourné 3 fois en deux jours chez Mòr, c'est pour dire a
+				quel point c'était bon !
+			</PostIt>
+		</Paragraph>
+
+		<Paragraph>
+			<div class="gallery">
+				<div class="img landscape small">
+					<div>
+						<Image
+							src={ao}
+							alt="Notre chambre d'auberge de jeunesse"
+						/>
+					</div>
+				</div>
+			</div>
+			<PostIt slot="postit-left" author="anneso">
+				Dortoire pour 4 de luxe avec douche dans la pièce
+			</PostIt>
+		</Paragraph>
+
+		<h2><span class="text-gradient">Jour 2 - 17/03/2024</span></h2>
+
+		<Paragraph>
+			<p>
+				Petit déjeuner typique anglais, haricots blancs en sauce,
+				saucisses végétariennes, pancakes, oeufs durs, confiture et
+				nutella, dans cet ordre.
+			</p>
+		</Paragraph>
+		<Paragraph>
+			<div class="pancakes">
+				<video controls width="30%" autoplay muted loop>
+					<source
+						style="display: block"
+						src="../pancakeMachine.mp4"
+						type="video/mp4"
+					/>
+				</video>
+			</div>
+			<PostIt slot="postit-left" author="anneso">
+				Je veux la même chez moi.
+			</PostIt>
+			<PostIt slot="postit-right" author="nath"> Non. </PostIt>
+		</Paragraph>
+		<Paragraph>
+			<p>
+				Belle randonnée de matinée avec l'ascension de <a
+					href="https://maps.app.goo.gl/1hi4AEHZfkwBxc9z6"
+					>Arthur's Seat</a
+				> et de ses 250 m d'élévation. Petit arrêt aux ruines de la chapelle
+				St Anthony sur le trajet.
+			</p>
+		</Paragraph>
+		<Paragraph>
+			<div class="gallery">
+				<div class="img portrait">
+					<div>
+						<Image
+							src={StAnthonyCamera}
+							alt="ruine de la chapelle St Anthony"
+						/>
+					</div>
+				</div>
+			</div>
+		</Paragraph>
+		<Paragraph>
+			<p>Prochain arrêt: le sommet, dans la brume.</p>
+		</Paragraph>
+
+		<Paragraph>
+			<div class="gallery">
+				<div class="img landscape small align-bottom">
+					<div>
+						<Image
+							src={arthurSeatSmog}
+							alt="Ciel embrumé sur le retour"
+						/>
+					</div>
+				</div>
+			</div>
+			<div class="gallery">
+				<div class="img landscape">
+					<div>
+						<Image
+							src={arthurSeatTop}
+							alt="La vue depuis le sommet vers le reste de la ville"
+						/>
+					</div>
+				</div>
+			</div>
+			<PostIt slot="postit-left" author="nath">
+				Spot vraiment, vraiment cool
+			</PostIt>
+		</Paragraph>
+
+		<Paragraph>
+			<p>
+				Pas le temps de traîner, à l'attaque du <a
+					href="https://www.edinburghcastle.scot/"
+					>Château d'Edimbourg</a
+				>!
+			</p>
+		</Paragraph>
+		<Paragraph>
+			<div class="gallery">
+				<div class="img landscape small">
+					<div>
+						<Image
+							src={edinburghCastleCanon}
+							alt="La grande place vue depuis l'interieur du chateau"
+						/>
+					</div>
+				</div>
+			</div>
+		</Paragraph>
+		<Paragraph>
+			<p>
+				A l'intérieur, visite du musée des Royals Scotts, des geôles, du
+				mémorial des guerres mondiales et des joyaux de la couronne. Et
+				petit arrêt snack au Redcoat café au sein du château.
+			</p>
+		</Paragraph>
+		<Paragraph>
+			<div class="gallery">
+				<div class="img landscape small">
+					<div>
+						<Image
+							src={edinburghCastleMonsMeg}
+							alt="Mons Meg, un énorme canon de 6 tonnes"
+						/>
+					</div>
+				</div>
+				<div class="img landscape small">
+					<div>
+						<Image
+							src={edinburghCastleChapel}
+							alt="Le dos du memorial des guerres mondiales"
+						/>
+					</div>
+				</div>
+			</div>
+			<PostIt slot="postit-left" author="anneso">
+				<a href="https://en.wikipedia.org/wiki/Mons_Meg">Mons Meg</a> est
+				l'un des plus larges canons du monde !
+			</PostIt>
+			<PostIt slot="postit-right" author="nath">
+				Dans le Memorial, il y a deux livres pour chaque unité écossaise
+				contenant le noms de morts de chaque guerre mondiale. C'est très
+				impréssionnant.
+			</PostIt>
+		</Paragraph>
+		<Paragraph>
+			<div class="gallery">
+				<div class="img landscape small">
+					<div>
+						<Image
+							src={edinburghCastleGreatHall}
+							alt="Le grand hall"
+						/>
+					</div>
+				</div>
+				<div class="img landscape small">
+					<div>
+						<Image
+							src={edinburghCastleMemorial}
+							alt="L'entrée du memorial des guerres mondiales"
+						/>
+					</div>
+				</div>
+			</div>
+		</Paragraph>
+
+		<Paragraph>
+			<p>
+				Pas le temps de se poser qu'il est déjà l'heure d'aller faire
+				notre tour du
+				<a
+					href="https://www.scotchwhiskyexperience.co.uk/international/french/"
+					>Scotch Whisky Experience</a
+				>. Explications de la fabrication du Whisky Ecossais (de l'eau,
+				de l'orge et de la levure), de sa méthode de conservation et de
+				son histoire avant une petite dégustation de quelques bouteilles
+			</p>
+		</Paragraph>
+		<Paragraph>
+			<div class="gallery">
+				<div class="img portrait small">
+					<div>
+						<Image
+							src={whiskyScottExperience}
+							alt="La collection de bouteilles de Whisky de l'entreprise gérant le tour"
+						/>
+					</div>
+				</div>
+			</div>
+		</Paragraph>
+		<Paragraph>
+			<p class="text-center">(Pas celles-ci)</p>
+		</Paragraph>
+		<Paragraph>
+			<div class="gallery">
+				<div class="img landscape small">
+					<div>
+						<Image
+							src={whiskyScottExperienceTestBottles}
+							alt="Les Whiskys que nous avons goûtés"
+						/>
+					</div>
+				</div>
+			</div>
+			<PostIt slot="postit-right" author="nath">
+				Je ne suis pas un trés grand fan de Whisky pur, mais la visite
+				était super intéressante et en goûtant les différents Whisky
+				j'ai quand même pu en trouver un qui me plaisit plus, celui
+				d'Islay (qui s'avère être celui qu'AnneSophie a le moins aimé)
+			</PostIt>
+		</Paragraph>
+		<Paragraph>
+			<p class="text-center">(celles-ci)</p>
+		</Paragraph>
+		<Paragraph>
+			<p>
+				Pour finir la journée, un Fish & Chips, <a
+					href="https://eatfishedinburgh.com/">#Fish</a
+				>, avec plusieurs options végétariennes, dont un Tofish (Tofu)
+				excellent.
+			</p>
+			<PostIt slot="postit-right" author="anneso">
+				Les options vegan aux UK sont un peu plus avancées qu'à Paris,
+				c'était un plaisir d'avoir du choix de qualité.
+			</PostIt>
+			<PostIt slot="postit-left" author="nath">
+				C'était la seule contrainte de nourriture que j'avais demandé
+				pour Edimbourg, il fallait tester ce Fish & Chips. NO REGRETS
+			</PostIt>
+		</Paragraph>
+
+		<h2><span class="text-gradient">Jour 3 - 18/03/2024</span></h2>
+		<Paragraph>
+			<p>
+				Journée de trajet, direction Inverness pour la deuxième partie
+				du voyage.
+			</p>
+		</Paragraph>
+
+		<Paragraph>
+			<p id="faskally">
+				Petit stop en milieu de journée à Pitlochry pour prendre un
+				repas à emporter à Morton's Coffee Lounge and Restaurant.
+				Direction ensuite <a
+					href="https://maps.app.goo.gl/jKcqm4fNdmUMF7bHA"
+					>Faskally Forest</a
+				>
+				<a href="#map_faskally"
+					><svg class="text-pin" viewBox="0 0 512 512">
+						<g>
+							<path
+								fill="white"
+								d="M256,390.634c13.353,0,25.482-6.804,32.448-18.201c48.81-79.857,106.992-185.103,106.992-232.994   C395.44,62.552,332.888,0,256,0S116.56,62.552,116.56,139.439c0,47.891,58.183,153.137,106.992,232.994   C230.518,383.83,242.648,390.634,256,390.634z M199.953,129.865c0-30.903,25.143-56.045,56.047-56.045s56.047,25.142,56.047,56.045   c0,30.904-25.143,56.046-56.047,56.046S199.953,160.77,199.953,129.865z"
+							></path>
+						</g>
+					</svg></a
+				> pour déguster nos sandwiches dans la nature.
+			</p>
+		</Paragraph>
+		<Paragraph>
+			<div class="gallery">
+				<div class="img landscape small">
+					<div>
+						<Image
+							src={faskallyForestDog}
+							alt="Petite ballade dans la forêt"
+						/>
+					</div>
+				</div>
+			</div>
+		</Paragraph>
+		<Paragraph>
+			<p id="glenview">
+				Arrivé ensuite dans notre châlet <a href="#map_glenview"
+					><svg class="text-pin" viewBox="0 0 512 512">
+						<g>
+							<path
+								fill="white"
+								d="M256,390.634c13.353,0,25.482-6.804,32.448-18.201c48.81-79.857,106.992-185.103,106.992-232.994   C395.44,62.552,332.888,0,256,0S116.56,62.552,116.56,139.439c0,47.891,58.183,153.137,106.992,232.994   C230.518,383.83,242.648,390.634,256,390.634z M199.953,129.865c0-30.903,25.143-56.045,56.047-56.045s56.047,25.142,56.047,56.045   c0,30.904-25.143,56.046-56.047,56.046S199.953,160.77,199.953,129.865z"
+							></path>
+						</g>
+					</svg></a
+				> pour les 4 prochains jour à
+				<a href="https://www.glenviewchaletpark.co.uk/"
+					>Glenview chalet park</a
+				> (avec un jacuzzi!)
+			</p>
+			<PostIt slot="postit-left" author="anneso">
+				Un lot de chalêts perdu au milieu de nul part qui avait pour
+				voisins directs des moutons.
+			</PostIt>
+		</Paragraph>
+		<Paragraph>
+			<div class="gallery">
+				<div class="img landscape small">
+					<div>
+						<Image
+							src={glenviewChaletParkView}
+							alt="Le salon du chalêt, avec un petit aperçu de nos voisins: des moutons"
+						/>
+					</div>
+				</div>
+				<div class="img landscape small">
+					<div>
+						<Image
+							src={glenviewChaletParkHotTub}
+							alt="Vue depuis le jacuzzi"
+						/>
+					</div>
+				</div>
+			</div>
+		</Paragraph>
+		<Paragraph>
+			<p>Premier repas fait maison avec une ratatouille!</p>
+		</Paragraph>
+		<h2><span class="text-gradient">Jour 4 - 19/03/2024</span></h2>
+
+		<Paragraph>
+			<p id="plodda">
+				Journée tranquille après toute la route de la veille, belle
+				randonnée l'après midi à
+				<a href="https://maps.app.goo.gl/U65KoFDo8L8gim866"
+					>Plodda Falls</a
+				>
+				<a href="#map_plodda"
+					><svg class="text-pin" viewBox="0 0 512 512">
+						<g>
+							<path
+								fill="white"
+								d="M256,390.634c13.353,0,25.482-6.804,32.448-18.201c48.81-79.857,106.992-185.103,106.992-232.994   C395.44,62.552,332.888,0,256,0S116.56,62.552,116.56,139.439c0,47.891,58.183,153.137,106.992,232.994   C230.518,383.83,242.648,390.634,256,390.634z M199.953,129.865c0-30.903,25.143-56.045,56.047-56.045s56.047,25.142,56.047,56.045   c0,30.904-25.143,56.046-56.047,56.046S199.953,160.77,199.953,129.865z"
+							></path>
+						</g>
+					</svg></a
+				>, 2km4 en pleine forêt et rivière
+			</p>
+		</Paragraph>
+
+		<Paragraph left="top">
+			<PostIt slot="postit-left" author="nath">
+				Au milieu des arbres, à quelques mètres du sentier, on est prêt
+				à filmer une scène du Seigneur des Anneaux
+			</PostIt>
+			<PostIt slot="postit-right" author="anneso">
+				De la végétation et des cascades, il ne m'en faut guère plus
+				pour être heureuse
+			</PostIt>
+			<div class="flex">
+				<div class="gallery col">
+					<div class="img portrait small">
+						<div>
+							<Image
+								src={ploddaFalls8}
+								alt="Un énorme tronc d'arbe au sol dans la forêt"
+							/>
+						</div>
+					</div>
+					<div class="img landscape small">
+						<div>
+							<Image
+								src={ploddaFalls9}
+								alt="Le coeur de la forêt"
+							/>
+						</div>
+					</div>
+					<div class="img landscape small">
+						<div>
+							<Image
+								src={ploddaFalls5}
+								alt="BBQ spot, May be hot"
+							/>
+						</div>
+					</div>
+					<div class="img portrait small">
+						<div>
+							<Image
+								src={ploddaFalls2}
+								alt="La rivière juste avant les cascades"
+							/>
+						</div>
+					</div>
+				</div>
+				<div class="gallery col">
+					<div class="img portrait small">
+						<div>
+							<Image
+								src={ploddaFalls4}
+								alt="Des vieilles marches en pierre mènent au sommet de cette petit colline"
+							/>
+						</div>
+					</div>
+					<div class="img landscape small">
+						<div>
+							<Image
+								src={ploddaFalls7}
+								alt="D'autre arbres au sol"
+							/>
+						</div>
+					</div>
+					<div class="img portrait small">
+						<div>
+							<Image
+								src={ploddaFalls1}
+								alt="Vue ensoleillée de la rivière"
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="gallery">
+				<div class="img landscape">
+					<div>
+						<Image
+							src={ploddaFalls3}
+							alt="La cascade depuis le sommet"
+						/>
+					</div>
+				</div>
+			</div>
+		</Paragraph>
+		<Paragraph>
+			<p>
+				Retour au chalet pour soirée lasagne et préparation ratée de
+				tiramisu pour le lendemain.
+			</p>
+			<PostIt slot="postit-right" author="anneso"> :( </PostIt>
+		</Paragraph>
+		<h2><span class="text-gradient">Jour 5 - 20/03/2024</span></h2>
+
+		<Paragraph>
+			<p id="urquhart">
+				Deuxième jour dans les Highlands, on commence par la visite de
+				l'iconique
+				<a
+					href="https://www.visitscotland.com/fr-fr/info/see-do/urquhart-castle-p245811"
+					>château d'Urquhart</a
+				>
+				<a href="#map_urquhart"
+					><svg class="text-pin" viewBox="0 0 512 512">
+						<g>
+							<path
+								fill="white"
+								d="M256,390.634c13.353,0,25.482-6.804,32.448-18.201c48.81-79.857,106.992-185.103,106.992-232.994   C395.44,62.552,332.888,0,256,0S116.56,62.552,116.56,139.439c0,47.891,58.183,153.137,106.992,232.994   C230.518,383.83,242.648,390.634,256,390.634z M199.953,129.865c0-30.903,25.143-56.045,56.047-56.045s56.047,25.142,56.047,56.045   c0,30.904-25.143,56.046-56.047,56.046S199.953,160.77,199.953,129.865z"
+							></path>
+						</g>
+					</svg></a
+				> surplombant le Loch Ness.
+			</p>
+		</Paragraph>
+		<Paragraph left="top">
+			<div class="gallery">
+				<div class="img landscape">
+					<div>
+						<Image
+							src={UquhartCastle1}
+							alt="Les ruines du chateau"
+						/>
+					</div>
+				</div>
+				<div class="img landscape">
+					<div>
+						<Image src={UquhartCastle2} alt="Le loch ness" />
+					</div>
+				</div>
+			</div>
+			<div class="gallery">
+				<div class="img landscape">
+					<div>
+						<Image
+							src={UquhartCastle3}
+							alt="L'entrée dans le chateau"
+						/>
+					</div>
+				</div>
+			</div>
+			<div class="gallery">
+				<div class="img portrait">
+					<div>
+						<Image
+							src={UquhartCastleLochNess}
+							alt="Le loch ness, calme"
+						/>
+					</div>
+				</div>
+				<div class="img portrait">
+					<div>
+						<Image
+							src={UquhartCastleNath}
+							alt="Nath avec un casque de chevalier"
+						/>
+					</div>
+				</div>
+			</div>
+			<PostIt slot="postit-left" author="anneso">
+				Encore un temps superbe. Il y avait un orateur présent pour
+				relater le passé du chateau, ce qui ajoutait au charme de
+				l'endroit.
+			</PostIt>
+			<PostIt slot="postit-right" author="nath">
+				Equipé pour aller affronter le monstre du Loch Ness. Le pleutre
+				n'a pas daigné se montrer pendant qu'on était présents !
+			</PostIt>
+		</Paragraph>
+		<Paragraph>
+			<p id="inverness">
+				Pour l'après-midi, petit passage à Inverness <a
+					href="#map_inverness"
+					><svg class="text-pin" viewBox="0 0 512 512">
+						<g>
+							<path
+								fill="white"
+								d="M256,390.634c13.353,0,25.482-6.804,32.448-18.201c48.81-79.857,106.992-185.103,106.992-232.994   C395.44,62.552,332.888,0,256,0S116.56,62.552,116.56,139.439c0,47.891,58.183,153.137,106.992,232.994   C230.518,383.83,242.648,390.634,256,390.634z M199.953,129.865c0-30.903,25.143-56.045,56.047-56.045s56.047,25.142,56.047,56.045   c0,30.904-25.143,56.046-56.047,56.046S199.953,160.77,199.953,129.865z"
+							></path>
+						</g>
+					</svg></a
+				>dans la librairie Leakey's Bookshop. Et balade en fin de
+				journée dans la réserve naturelle de Merkinch située sur la côte
+				de la ville.
+			</p>
+		</Paragraph>
+		<Paragraph>
+			<div class="gallery">
+				<div class="img landscape">
+					<div>
+						<Image
+							src={InvernessLeakeysBookshop}
+							alt="L'interieur de la librairie Leakey's Bookshop."
+						/>
+					</div>
+				</div>
+				<div class="img landscape">
+					<div>
+						<Image
+							src={InvernessMerkinchReserve}
+							alt="La reserve Merkinch sur la côte"
+						/>
+					</div>
+				</div>
+			</div>
+			<PostIt slot="postit-right" author="nath">
+				Le chemin se poursuit entre un terrain de football et un marais,
+				et les autres ont vu deux cerfs s'échapper en
+				entendant le chien. En pleine ville !
+			</PostIt>
+		</Paragraph>
+		<Paragraph>
+			<p>
+				Soirée pizza maison et nous avons pris notre revanche sur les
+				tiramisus ratés de la veille ! Également une session préparation
+				de sandwich pour le lendemain, pois chiche mayo, viande
+				végétarienne et coleslaw.
+			</p>
+		</Paragraph>
+
+		<h2><span class="text-gradient">Jour 6 - 21/03/2024</span></h2>
+
+		<Paragraph>
+			<p id="fairypools">
+				Grosse expédition jusqu'à The Isle of Skye ! 3 heures de voiture
+				pour arriver aux
+				<a href="https://maps.app.goo.gl/fUXttmjFJZaEREn1A"
+					>Fairy Pools</a
+				>
+				<a href="#map_fairypools"
+					><svg class="text-pin" viewBox="0 0 512 512">
+						<g>
+							<path
+								fill="white"
+								d="M256,390.634c13.353,0,25.482-6.804,32.448-18.201c48.81-79.857,106.992-185.103,106.992-232.994   C395.44,62.552,332.888,0,256,0S116.56,62.552,116.56,139.439c0,47.891,58.183,153.137,106.992,232.994   C230.518,383.83,242.648,390.634,256,390.634z M199.953,129.865c0-30.903,25.143-56.045,56.047-56.045s56.047,25.142,56.047,56.045   c0,30.904-25.143,56.046-56.047,56.046S199.953,160.77,199.953,129.865z"
+							></path>
+						</g>
+					</svg></a
+				>. Le trajet était très agréable avec de magnifiques cascades et
+				rivières à observer.
+			</p>
+		</Paragraph>
+		<Paragraph>
+			<div class="gallery">
+				<div class="img landscape">
+					<div>
+						<Image
+							src={fairyPools1}
+							alt="Vue et brume pendant le trajet"
+						/>
+					</div>
+				</div>
+			</div>
+		</Paragraph>
+		<Paragraph>
+			<p>
+				Nous avons passé 2 heures de plus pour les remonter jusqu'au
+				Cairn des Fairy pools. Il a fallu sauter par-dessus quelques
+				ruisseaux et crapahuter dans la boue pour y arriver, mais cela
+				n'a rendu les sandwiches que meilleurs malgré la pluie.
+			</p>
+		</Paragraph>
+		<Paragraph>
+			<PostIt slot="postit-left" author="nath">
+				Pour continuer a remonter la rivière, on a du sauter par dessus
+				quelques ruisseaux plus étroits, ou traversé en marchant sur
+				des pierres.
+			</PostIt>
+			<div class="gallery">
+				<div class="img landscape">
+					<div>
+						<Image src={fairyPools2} alt="Une cascade" />
+					</div>
+				</div>
+				<div class="img landscape">
+					<div>
+						<Image src={fairyPools3} alt="La rivière et la brume" />
+					</div>
+				</div>
+			</div>
+			<div class="gallery">
+				<div class="img portrait">
+					<div>
+						<Image src={fairyPools4} alt="Une autre cascade" />
+					</div>
+				</div>
+				<div class="img landscape small">
+					<div>
+						<Image src={fairyPools5} alt="Toujours la rivière" />
+					</div>
+				</div>
+			</div>
+			<PostIt slot="postit-right" author="anneso">
+				Plus de cascades !!
+			</PostIt>
+		</Paragraph>
+		<Paragraph>
+			<p id="eilean">
+				Puis, on refait le trajet inverse, en s'arrêtant pour profiter
+				de la vue sur le château
+				<a href="https://www.eileandonancastle.com/">Eilean Donan</a>
+				<a href="#map_eilean"
+					><svg class="text-pin" viewBox="0 0 512 512">
+						<g>
+							<path
+								fill="white"
+								d="M256,390.634c13.353,0,25.482-6.804,32.448-18.201c48.81-79.857,106.992-185.103,106.992-232.994   C395.44,62.552,332.888,0,256,0S116.56,62.552,116.56,139.439c0,47.891,58.183,153.137,106.992,232.994   C230.518,383.83,242.648,390.634,256,390.634z M199.953,129.865c0-30.903,25.143-56.045,56.047-56.045s56.047,25.142,56.047,56.045   c0,30.904-25.143,56.046-56.047,56.046S199.953,160.77,199.953,129.865z"
+							></path>
+						</g>
+					</svg></a
+				>qui était malheureusement déjà fermé.
+			</p>
+		</Paragraph>
+		<Paragraph>
+			<div class="gallery">
+				<div class="img landscape">
+					<div>
+						<Image
+							src={eileanDonanCastle}
+							alt="Le chateau Eilean Donan"
+						/>
+					</div>
+				</div>
+			</div>
+			<PostIt slot="postit-right" author="anneso">
+				Ce week-end, le <a
+					href="https://en.wikipedia.org/wiki/Clan_Macrae"
+					>clan Macrae</a
+				> organisait un diner annuel.
+			</PostIt>
+		</Paragraph>
+		<Paragraph>
+			<p>
+				On profite de la soirée après cette longue journée avec les
+				tiramisus préparés la veille et des burritos, avant de sauter
+				dans le jacuzzi.
+			</p>
+		</Paragraph>
+		<h2><span class="text-gradient">Jour 7 - 22/03/2024</span></h2>
+
+		<Paragraph>
+			<p id="orrin">
+				Dernière journée avant le retour, on prend un brunch copieux à
+				base de burrito et oeufs brouillés puis on se met en route pour
+				une nouvelle randonnée aux <a
+					href="https://maps.app.goo.gl/MEdHKhpu3Da3WJaJ6"
+					>cascades d'Orrin</a
+				>
+				<a href="#map_orrin"
+					><svg class="text-pin" viewBox="0 0 512 512">
+						<g>
+							<path
+								fill="white"
+								d="M256,390.634c13.353,0,25.482-6.804,32.448-18.201c48.81-79.857,106.992-185.103,106.992-232.994   C395.44,62.552,332.888,0,256,0S116.56,62.552,116.56,139.439c0,47.891,58.183,153.137,106.992,232.994   C230.518,383.83,242.648,390.634,256,390.634z M199.953,129.865c0-30.903,25.143-56.045,56.047-56.045s56.047,25.142,56.047,56.045   c0,30.904-25.143,56.046-56.047,56.046S199.953,160.77,199.953,129.865z"
+							></path>
+						</g>
+					</svg></a
+				>. On explore une vieille bâtisse sortie tout droit de The
+				Witcher, avant de profiter de la vue des cascades sous la
+				première vraie averse écossaise de la semaine.
+			</p>
+		</Paragraph>
+		<Paragraph left="top" right="bottom">
+			<div class="flex">
+				<div class="gallery col">
+					<div class="img portrait">
+						<div>
+							<Image
+								src={fallsOfOrrin1}
+								alt="Gros plan de mousse. Art."
+							/>
+						</div>
+					</div>
+					<div class="img landscape small">
+						<div>
+							<Image
+								src={fallsOfOrrin2}
+								alt="Toujours plus de mousse"
+							/>
+						</div>
+					</div>
+					<div class="img landscape small">
+						<div>
+							<Image
+								src={fallsOfOrrin5}
+								alt="Un bout de chemin au coeur de la forêt"
+							/>
+						</div>
+					</div>
+					<div class="img landscape small">
+						<div>
+							<Image src={fallsOfOrrin7} alt="La cascade" />
+						</div>
+					</div>
+				</div>
+				<div class="gallery col">
+					<div class="img portrait">
+						<div>
+							<Image src={fallsOfOrrin3} alt="Une petite ruine" />
+						</div>
+					</div>
+					<div class="img landscape small">
+						<div>
+							<Image
+								src={fallsOfOrrin4}
+								alt="La rivière juste avant la cascade."
+							/>
+						</div>
+					</div>
+					<div class="img landscape small">
+						<div>
+							<Image
+								src={fallsOfOrrin6}
+								alt="La cascade un peu plus bas"
+							/>
+						</div>
+					</div>
+					<div class="img landscape small">
+						<div>
+							<Image
+								src={fallsOfOrrinFrog}
+								alt="Une petite grenouille rencontrée sur le retour"
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+			<PostIt slot="postit-left" author="anneso"> moss. </PostIt>
+			<PostIt slot="postit-right" author="nath">
+				Petite grenouille que j'ai spot cachée sur le côté de la route
+				sur le retour !
+			</PostIt>
+		</Paragraph>
+		<Paragraph>
+			<p>
+				Dernier petit effort de cuisine avec des crêpes puis on commence
+				à ranger.
+			</p>
+		</Paragraph>
+
+		<h2><span class="text-gradient">Jour 8 - 23/03/2024</span></h2>
+
+		<Paragraph>
+			<p>
+				C'est le retour! On s'arrête de nouveau dans la Forêt de
+				Faskally pour se dégourdir les jambes, puis directement jusqu'à
+				l'aéroport d'Edimbourg avec quelques heures d'avance. On se
+				sépare ici du reste du groupe qui continue jusqu'à <a
+					href="https://maps.app.goo.gl/esX298Dq6YryGEKQ7">Penrith</a
+				> en voiture puis chez eux, et on en profite pour finir la semaine
+				sur un bon Burger King végétarien.
+			</p>
+			<PostIt slot="postit-right" author="nath">
+				Une deuxième demande avant de rentrer ! Et toujours pas de
+				regrets, BK vege c'était meilleur que ce a quoi je m'attendais.
+				Pas dispo à Paris, c'est dommage.
+			</PostIt>
+		</Paragraph>
+	</main>
+</Layout>

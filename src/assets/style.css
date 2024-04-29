@@ -1,0 +1,357 @@
+main {
+    margin: auto;
+    padding: 1rem;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.header-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100%;
+    background-position: 0%;
+}
+
+.text-gradient {
+    background-image: var(--accent-gradient);
+    background-repeat: no-repeat;
+    background-position: 0px 38px;
+    padding-bottom: 4px;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 25px;
+}
+
+.intro>div {
+    width: 400px;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+.tartan-container {
+    display: flex;
+    align-items: center;
+}
+
+.tartan-container p {
+    margin-right: 30px;
+}
+
+.tartan {
+    width: 100px;
+    height: 100px;
+}
+
+@property --white {
+    syntax: "<color>";
+    initial-value: white;
+    inherits: false;
+}
+
+@property --blue {
+    syntax: "<color>";
+    initial-value: white;
+    inherits: false;
+}
+
+.img {
+    overflow: hidden;
+    display: flex;
+    padding: 2px;
+    margin: 2px;
+    transition:
+        --white 0.5s,
+        --blue 0.5s;
+}
+
+.img:hover {
+    --white: white;
+    --blue: #005eb9;
+}
+
+.img>div {
+    display: flex;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+.gallery img {
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+    height: auto;
+}
+
+.gallery div {
+    overflow: hidden;
+}
+
+.gallery {
+    padding: 2px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.gallery.col {
+    justify-content: flex-start;
+}
+
+.align-bottom {
+    align-self: end;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.pancakes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    color: #005eb9;
+}
+
+a:visited {
+    color: white;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.separator {
+    margin-top: 100px;
+}
+
+.map {
+    position: relative;
+    display: flex;
+
+    &:before,
+    &:after {
+      background: rgba(255,255,235,.6);
+      box-shadow: 0 1px 3px rgba(0,0,0,.4);
+      content: "";
+      display: block;
+      height: 30px;
+      position: absolute;
+      margin: auto;
+      width: 140px;
+    }
+    &:before {
+        left: -34px;
+        top: 10px;
+        transform: rotate(-35deg);
+      }
+    
+      &:after {
+        right: -76px;
+ 
+        top: 28px;
+        transform: rotate(45deg);
+      }
+}
+@media screen and (min-width: 992px) {
+    .map {
+        &:after {
+            right: -34px;
+        }
+    }
+}
+
+.map img {
+    width: 350px;
+    height: auto;
+}
+
+.text-pin {
+    width: 30px;
+    height: 30px;
+    margin-bottom: -7px;
+
+    &:hover path {
+        fill: #005eb9;
+    }
+}
+
+.translate {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+@media screen and (min-width: 992px) {
+    .intro {
+        justify-content: space-around;
+        flex-direction: row;
+    }
+
+    .intro>div {
+        margin-bottom: 0px;
+    }
+
+    .gallery.col .portrait {
+        width: 100%;
+    }
+
+    .gallery.col .small {
+        width: 100%;
+    }
+
+    .portrait {
+        width: 50%;
+    }
+
+    .small {
+        width: 50%;
+    }
+
+    .gallery {
+        flex-direction: row;
+    }
+
+    .col {
+        flex-direction: column;
+    }
+
+    .flex>.gallery.col:first-child {
+        margin-right: 10px;
+    }
+
+    .flex {
+        flex-direction: row;
+    }
+
+    .map img {
+        width: 800px;
+    }
+}
+
+.highlight {
+    fill: #005eb9;
+}
+
+.edinburgh {
+    top: 243px;
+    left: 265px;
+}
+
+.inverness {
+    top: 25px;
+    left: 184px;
+}
+
+.plodda {
+    top: 51px;
+    left: 133px;
+}
+
+.faskally {
+    top: 136px;
+    left: 224px;
+}
+
+.glenview {
+    top: 36px;
+    left: 153px;
+}
+
+.urquhart {
+    top: 48px;
+    left: 166px;
+}
+
+.fairypools {
+    top: 62px;
+    left: 22px;
+}
+
+.eilean {
+    top: 58px;
+    left: 86px;
+}
+
+.orrin {
+    top: 26px;
+    left: 160px;
+}
+
+@media screen and (min-width: 992px) {
+    .edinburgh {
+        top: 544px;
+        left: 630px;
+    }
+
+    .inverness {
+        top: 51px;
+        left: 449px;
+    }
+
+    .plodda {
+        top: 120px;
+        left: 340px;
+    }
+
+    .faskally {
+        top: 303px;
+        left: 531px;
+    }
+
+    .glenview {
+        top: 83px;
+        left: 386px;
+    }
+
+    .urquhart {
+        top: 101px;
+        left: 412px;
+    }
+
+    .fairypools {
+        top: 131px;
+        left: 78px;
+    }
+
+    .eilean {
+        top: 125px;
+        left: 219px;
+    }
+
+    .orrin {
+        top: 45px;
+        left: 390px;
+    }
+}
